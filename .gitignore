@@ -10,6 +10,10 @@ HELP.md
 **/build/
 !**/src/main/**/build/
 !**/src/test/**/build/
+**/.gradle/
+**/.cxx/
+**/.externalNativeBuild/
+**/captures/
 
 ### STS ###
 **/.apt_generated
@@ -25,6 +29,7 @@ HELP.md
 **/*.iws
 **/*.iml
 **/*.ipr
+**/local.properties
 
 ### NetBeans ###
 **/nbproject/private/
@@ -35,6 +40,9 @@ HELP.md
 
 ### VS Code ###
 **/.vscode/
+
+# OS-specific files
+**/.DS_Store
 
 # Local Spring profile secrets
 **/src/main/resources/application-local.properties
