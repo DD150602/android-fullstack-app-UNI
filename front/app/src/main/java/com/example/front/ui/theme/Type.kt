@@ -1,4 +1,4 @@
-package com.example.android_fullstack_app_uni.ui.theme
+package com.example.front.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

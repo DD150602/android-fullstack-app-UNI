@@ -1,4 +1,4 @@
-package com.example.android_fullstack_app_uni
+package com.example.front
 
 import org.junit.Test
 

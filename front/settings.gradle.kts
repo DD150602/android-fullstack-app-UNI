@@ -22,5 +22,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "android-fullstack-app-UNI"
+rootProject.name = "front"
 include(":app")

@@ -1,4 +1,4 @@
-package com.example.android_fullstack_app_uni.ui.theme
+package com.example.front.ui.theme
 
 import android.app.Activity
 import android.os.Build
@@ -34,7 +34,7 @@ private val LightColorScheme = lightColorScheme(
 )
 
 @Composable
-fun AndroidfullstackappUNITheme(
+fun FrontTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
     dynamicColor: Boolean = true,
