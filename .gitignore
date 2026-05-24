@@ -35,3 +35,6 @@ HELP.md
 
 ### VS Code ###
 **/.vscode/
+
+# Local Spring profile secrets
+**/src/main/resources/application-local.properties
