@@ -12,8 +12,23 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.Front">
+        android:theme="@style/Theme.Front"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".ProductFormActivity"
+            android:exported="false"
+            android:label="@string/title_activity_product_form"
+            android:theme="@style/Theme.Front" />
+        <activity
+            android:name=".ProductDetailActivity"
+            android:exported="false"
+            android:label="@string/title_activity_product_detail"
+            android:theme="@style/Theme.Front" />
+        <activity
+            android:name=".ProductsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_products"
+            android:theme="@style/Theme.Front" />
         <activity
             android:name=".ProfileActivity"
             android:exported="false"

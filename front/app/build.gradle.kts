@@ -52,6 +52,7 @@ dependencies {
     implementation(libs.okhttp.logging)
     implementation(libs.retrofit)
     implementation(libs.retrofit.gson)
+    implementation(libs.androidx.material.icons.extended)
     testImplementation(libs.junit)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)

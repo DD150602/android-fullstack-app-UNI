@@ -45,6 +45,9 @@ class ProfileActivity : ComponentActivity() {
                 ProfileScreen(
                     profile = profile,
                     isLoading = isLoading,
+                    onNavigateToProducts = {
+                        startActivity(Intent(this@ProfileActivity, ProductsActivity::class.java))
+                    },
                     onLogout = {
                         lifecycleScope.launch {
                             tokenStorage.clearToken()
@@ -94,6 +97,7 @@ class ProfileActivity : ComponentActivity() {
 private fun ProfileScreen(
     profile: ProfileResponse?,
     isLoading: Boolean,
+    onNavigateToProducts: () -> Unit,
     onLogout: () -> Unit
 ) {
     Column(
@@ -117,6 +121,15 @@ private fun ProfileScreen(
                 ProfileLine("Correo", profile.correo)
                 ProfileLine("Cedula", profile.cedula)
                 ProfileLine("Celular", profile.celular ?: "")
+
+                Button(
+                    onClick = onNavigateToProducts,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 12.dp)
+                ) {
+                    Text("Ver Productos")
+                }
 
                 Button(
                     onClick = onLogout,
