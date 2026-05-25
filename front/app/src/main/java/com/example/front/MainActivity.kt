@@ -1,47 +1,29 @@
 package com.example.front
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.front.ui.theme.FrontTheme
+import androidx.lifecycle.lifecycleScope
+import com.example.front.data.storage.TokenStorage
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            FrontTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+
+        val tokenStorage = TokenStorage(applicationContext)
+
+        lifecycleScope.launch {
+            val token = tokenStorage.tokenFlow.first()
+            val nextActivity = if (token.isNullOrBlank()) {
+                LoginActivity::class.java
+            } else {
+                ProfileActivity::class.java
             }
+
+            startActivity(Intent(this@MainActivity, nextActivity))
+            finish()
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    FrontTheme {
-        Greeting("Android")
     }
 }
